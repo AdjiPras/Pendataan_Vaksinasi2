@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h3 class="m-0">Selamat Datang {{ data_nama[1] }}, di Sistem Pendataan Vaksinasi Kabupaten Sleman</h3>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="img-fluid">
+        <img src="{{ url_for('static', filename='img/vaccine.png')}}" border="0" style="margin-left: 160px; max-width: 50%; height: auto;">
+      <div>
+      <div class="container-fluid">
+        
+      </div><!-- /.container-fluid -->
+    </section>
+    
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% include 'footer.html' %}

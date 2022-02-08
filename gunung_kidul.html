@@ -1,0 +1,102 @@
+{% include 'header.html' %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h1 class="m-2">GUNUNG KIDUL</h1>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div>
+                <img src="{{ url_for('static', filename='img/gunungkidul.png')}}" border="0" style="width: 70px; height: 90px; margin-left: 20px; margin-top: 10px;">
+              <div>
+              <div class="card-header">
+                <h2 class="card-title">Tabel Data Vaksinasi Gunung Kidul</h2>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>NIK</th>
+                      <th>Nama</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Agama</th>
+                      <th>Kota Lahir</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Kelurahan</th>
+                      <th>Kecamatan</th>
+                      <th>Kabupaten / Kota</th>
+                      <th>Provinsi</th>
+                      <th>No. Telp / WA (aktif)</th>
+                      <th>Jenis Vaksin</th>
+                      <th>Lokasi</th>
+                      <th>Dosis 1</th>
+                      <th>Dosis 2</th>
+                      <th>Tipe Akses</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% set no=namespace(value=1) %}
+                    {% for row in container_gunung_kidul %}
+                    <tr>
+                      <td>{{ no.value }}</td>
+                      {% set no.value=no.value+1 %}
+                      <td>{{ row[0] }}</td>
+                      <td>{{ row[1] }}</td>
+                      <td>{{ row[2] }}</td>
+                      <td>{{ row[3] }}</td>
+                      <td>{{ row[4] }}</td>
+                      <td>{{ row[5] }}</td>
+                      <td>{{ row[6] }}</td>
+                      <td>{{ row[7] }}</td>
+                      <td>{{ row[8] }}</td>
+                      <td>{{ row[9] }}</td>
+                      <td>{{ row[10] }}</td>
+                      <td>{{ row[11] }}</td>
+                      <td>{{ row[12] }}</td>
+                      <td>{{ row[13] }}</td>
+                      <td>{{ row[14] }}</td>
+                      <td>{{ row[15] }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+              <!-- /.card-body -->
+              <!-- <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% include 'footer.html' %}

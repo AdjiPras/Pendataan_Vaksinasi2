@@ -1,0 +1,99 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Data Vaksinasi</h1>
+    <div>
+      <a href="{{ url_for('insert_data') }}" type="button" class="btn btn-success">Tambah Data Vaksinasi</a>
+    </div><br>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-dark">Kabupaten Sleman</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIK</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Agama</th>
+                            <th>Kota Lahir</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
+                            <th>Kabupaten / Kota</th>
+                            <th>Provinsi</th>
+                            <th>No. Telp / WA (aktif)</th>
+                            <th>Jenis Vaksin</th>
+                            <th>Lokasi</th>
+                            <th>Dosis 1</th>
+                            <th>Dosis 2</th>
+                            <th>Tipe Akses</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>NIK</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Agama</th>
+                            <th>Kota Lahir</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
+                            <th>Kabupaten / Kota</th>
+                            <th>Provinsi</th>
+                            <th>No. Telp / WA (aktif)</th>
+                            <th>Jenis Vaksin</th>
+                            <th>Lokasi</th>
+                            <th>Dosis 1</th>
+                            <th>Dosis 2</th>
+                            <th>Tipe Akses</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% set no=namespace(value=1) %}
+                    {% for row in container_vaksin %}
+                    <tr>
+                      <td>{{ no.value }}</td>
+                      {% set no.value=no.value+1 %}
+                      <td>{{ row[0] }}</td>
+                      <td>{{ row[1] }}</td>
+                      <td>{{ row[2] }}</td>
+                      <td>{{ row[3] }}</td>
+                      <td>{{ row[4] }}</td>
+                      <td>{{ row[5] }}</td>
+                      <td>{{ row[6] }}</td>
+                      <td>{{ row[7] }}</td>
+                      <td>{{ row[8] }}</td>
+                      <td>{{ row[9] }}</td>
+                      <td>{{ row[10] }}</td>
+                      <td>{{ row[11] }}</td>
+                      <td>{{ row[12] }}</td>
+                      <td>{{ row[13] }}</td>
+                      <td>{{ row[14] }}</td>
+                      <td>{{ row[15] }}</td>
+                      <td>{{ row[16] }}<a href="{{ url_for('update_data', ktp = row[0]) }}" class="btn btn-warning" role="button">Ubah</a></td>
+                      <td>{{ row[17] }}<a href="{{ url_for('delete_data', ktp = row[0]) }}" class="btn btn-danger" role="button">Hapus</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+{% include 'footer.html' %}

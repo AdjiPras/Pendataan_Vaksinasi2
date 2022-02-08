@@ -1,0 +1,135 @@
+{% include 'header.html' %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Tambah Data veksinasi</h1>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        
+        <div class="row">
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-dark">
+              <div class="card-header">
+                <h3 class="card-title">Form Tambah Data Vaksinasi</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="{{ url_for('insert_data') }}" method="POST">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="ktp">NIK</label>
+                    <input type="text" class="form-control" id="ktp" name="ktp" placeholder="Masukkan Nomor KTP...">
+                  </div>
+                  <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama...">
+                  </div>
+                  <div class="form-group col-md-14">
+                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                    <select id="jenis_kelamin" class="form-control" name="jenis_kelamin" placeholder="Masukkan Jenis Kelamin Anda...">
+                      <option value=""></option>
+                      <option value="Pria">Pria</option>
+                      <option value="Wanita">Wanita</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-14">
+                    <label for="agama">Agama</label>
+                    <select id="agama" class="form-control" name="agama" placeholder="Masukkan Jenis vaksin Anda...">
+                      <option value=""></option>
+                      <option value="Islam">Islam</option>
+                      <option value="Hindu">Hindu</option>
+                      <option value="Hindu">Buddha</option>
+                      <option value="Hindu">Katholik</option>
+                      <option value="Hindu">Kristen</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="kota_lahir">Kota Lahir</label>
+                    <input type="text" class="form-control" id="kota_lahir" name="kota_lahir" placeholder="Masukkan Kota Lahir...">
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir...">
+                  </div>
+                  <div class="form-group">
+                    <label for="kelurahan">Kelurahan</label>
+                    <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Masukkan Kelurahan Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="kecamatan">Kecamatan</label>
+                    <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Masukkan Kecamatan Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="kabupaten_kota">Kabupaten / Kota</label>
+                    <input type="text" class="form-control" id="kabupaten_kota" name="kabupaten_kota" placeholder="Masukkan Kabupaten / Kota Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="provinsi">Provinsi</label>
+                    <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="Masukkan Provinsi Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_telepon">No. Telp/WA (Aktif)</label>
+                    <input type="text" class="form-control" id="no_telepon" name="no_telepon" placeholder="Masukkan Nomor Telp / WA aktif Anda...">
+                  </div>
+                  <div class="form-group col-md-14">
+                    <label for="jenis_vaksin">Jenis Vaksin</label>
+                    <select id="jenis_vaksin" class="form-control" name="jenis_vaksin" placeholder="Masukkan Jenis vaksin Anda...">
+                      <option value=""></option>
+                      <option value="Sinovac">Sinovac</option>
+                      <option value="AstraZeneca">AstraZeneca</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="lokasi_vaksin">Lokasi Vaksin</label>
+                    <input type="text" class="form-control" id="lokasi_vaksin" name="lokasi_vaksin" placeholder="Masukkan Lokasi Vaksin Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="dosis_pertama">Dosis Pertama</label>
+                    <input type="date" class="form-control" id="dosis_pertama" name="dosis_pertama" placeholder="Masukkan Tanggal Vasksin Pertama Anda...">
+                  </div>
+                  <div class="form-group">
+                    <label for="dosis_kedua">Dosis Kedua</label>
+                    <input type="date" class="form-control" id="dosis_kedua" name="dosis_kedua" placeholder="Masukkan Tanggal Vasksin Kedua Anda...">
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="vaksin_booster">Vaksin Booster</label>
+                    <input type="date" class="form-control" id="vaksin_booster" name="vaksin_booster" placeholder="Masukkan Tanggal Vasksin Booster Anda...">
+                  </div> -->
+                  <div class="form-group col-md-14">
+                    <label for="tipe_akses">Tipe Akses</label>
+                    <select id="tipe_akses" class="form-control" name="tipe_akses" placeholder="Masukkan Tipe Akses Anda...">
+                      <option value=""></option>
+                      <option value="Admin">Admin</option>
+                      <option value="Pengguna">Pengguna</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-dark">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% include 'footer.html' %}
